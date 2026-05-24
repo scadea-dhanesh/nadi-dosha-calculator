@@ -1,0 +1,50 @@
+# -*- coding: utf-8 -*-
+"""Tail content appended to _generate_regional_translations.py - run once then delete."""
+
+TAIL = r'''
+    "validation": {
+        "nameRequired": "దయచేసి పేరు నమోదు చేయండి", "dateRequired": "దయచేసి పుట్టిన తేదీ నమోదు చేయండి",
+        "dateInvalid": "DD-MM-YYYY ఫార్మాట్‌లో చెల్లుబాటు అయ్యే తేదీ నమోదు చేయండి",
+        "dateFormat": "ఉదాహరణ: 20-12-1998 లేదా 20/12/1998", "timeRequired": "దయచేసి పుట్టిన సమయం నమోదు చేయండి",
+        "timeInvalid": "చెల్లుబాటు అయ్యే సమయం నమోదు చేయండి", "hourRange": "గంట 1 నుండి 12 మధ్య ఉండాలి",
+        "minuteRange": "నిమిషాలు 00 నుండి 59 మధ్య ఉండాలి", "periodRequired": "దయచేసి AM లేదా PM ఎంచుకోండి",
+        "timeFormat": "ఉదాహరణ: 2:30 PM లేదా 10:15 AM", "placeRequired": "దయచేసి పుట్టిన స్థలం నమోదు చేయండి",
+        "placeInvalid": "చెల్లుబాటు అయ్యే నగరం పేరు నమోదు చేయండి",
+        "placeFormat": "ఉదాహరణ: Mumbai, India లేదా New York, USA",
+    },
+    "footer": {
+        "certified": "ఖగోళ ఖచ్చితత్వం ధృవీకరించబడింది",
+        "standards": "IAU 2000B Standards • Government of India Ephemeris",
+        "method": "IAU 2000B Lunar Theory (International Astronomical Union) 60 ELP2000-85 periodic terms తో ఉపయోగిస్తున్నాము - MIT సిఫార్సు చేసిన మరియు Indian Astronomical Ephemeris (Positional Astronomy Centre, Kolkata) ఉపయోగించే అదే పద్ధతి.",
+        "accuracy": "ప్రామాణిక ఆన్‌లైన్ కాలిక్యులేటర్ల కంటే 5-6× ఎక్కువ ఖచ్చితత్వం (±0.5 arc-minutes vs ±2-3 arc-minutes) - సరిహద్దు కేసులలో కూడా నమ్మకమైన నక్షత్ర నిర్ణయాన్ని నిర్ధారిస్తుంది.",
+        "userGuide": "వినియోగదారు మార్గదర్శి", "technical": "సాంకేతిక డాక్యుమెంటేషన్", "github": "ఓపెన్ సోర్స్",
+        "title": "నాడి దోష కాలిక్యులేటర్", "rights": "ఖచ్చితమైన వైదిక జ్యోతిష్యం కోసం ❤️ తో తయారు చేయబడింది",
+    },
+    "explanation_title": "నాడి దోషం అర్థం చేసుకోవడం - వివాహ అనుకూలతలో కీలక అంశం",
+    "crisis_title": "వైవాహిక జీవితంలో పెరుగుతున్న సంక్షోభం",
+    "crisis_content": "నాడి దోషం వల్ల వైవాహిక జీవితం రోజు రోజుకి దెబ్బతింటోంది. భారతదేశంలో మాత్రమే కాదు, ప్రపంచవ్యాప్తంగా పరిస్థితులు అలా ఉన్నాయి - వివాహం ప్రారంభమైన తర్వాత కొద్ది కాలంలోనే విడిపోతుంది. పురుషుడు-స్త్రీ మధ్య ఉండాల్సిన సమన్వయం, సామరస్యం ఏర్పడడం లేదు; నిరంతర గొడవలు, వివాదాలు, విడాకులు, ఆత్మహత్యలు, హత్యలు వంటి తీవ్ర పరిణామాలతో జీవితం కష్టంగా మారుతుంది.",
+    "stats_title": "ఆందోళనకర గణాంకాలు",
+    "stats_content": "WHO నివేదికల ప్రకారం, ప్రతి సంవత్సరం ప్రపంచవ్యాప్తంగా 8 లక్షల మంది ఆత్మహత్య చేసుకుంటున్నారు - ప్రతి 40 సెకన్లకు ఒకరు చనిపోతున్నారు. వీరిలో చాలా మంది జీవిత భాగస్వామి విశ్వాసఘాతం లేదా కుటుంబ సమస్యల వల్ల ఈ చరమ పదక్షేపం తీసుకుంటున్నారు. 2005-2015 మధ్య భారతదేశంలో ఆత్మహత్యలు 17.3% పెరిగాయి. భారతదేశంలో ఆత్మహత్యకు ప్రధాన కారణం అనుకూలం కాని వివాహాలు.",
+    "form_title": "నాడి దోషం ఎలా ఏర్పడుతుంది",
+    "form_content1": "వరుడు-వధువు పుట్టిన నక్షత్రాలు ఒకే నాడి కాకూడదు. వారి నాడులు వేరుగా ఉండాలి అప్పుడు శుభం. అందువల్ల ఆది-ఆది, మధ్య-మధ్య, అంత్య-అంత్య నాడి మిశ్రమాలు వివాహానికి అశుభం. ఆది-మధ్య, మధ్య-అంత్య, ఆది-అంత్య మిశ్రమాలు శుభం. ఇలా కాకపోతే నాడి దోషం.",
+    "form_content2": "ఇద్దరికీ మధ్య నాడి ఉంటే అత్యంత అశుభం; వివాహం చేయకూడదు. అలాంటి వివాహాలు గొడవలు, వివాదాలు, వేరుపడటం, చనిపోవడం వరకు దారితీస్తాయి.",
+    "effects_title": "నాడి దోషం వినాశకర ప్రభావాలు",
+    "effects_content": "నాడి దోషం ఉంటే జంట వ్యాధులు, ఉద్యోగ/వ్యాపార నష్టాలు, ఆర్థిక నష్టాలు, కుటుంబ కలహం, భార్య-భర్త మధ్య ప్రేమ-సామరస్యం లేకపోవడం వంటి బాధలు అనుభవిస్తారు. సంతానం లేకపోవడం లేదా అనారోగ్య సంతానం. రెండు కుటుంబాలకు కష్టాలు, వ్యాధులు-ప్రమాదాలు.",
+    "scriptures_title": "నాడి దోషంపై ప్రాచీన గ్రంథాలు",
+    "meaning1": "అర్థం: అన్ని గుణాలు ఉన్నా, నాడి దోషంలో వివాహం chacchi మరణానికి దారితీస్తుంది. ఇది పెద్ద పాపం.",
+    "meaning2": "అర్థం: మధ్య నాడి దోషం వరుడి మరణానికి, అంత్య నాడి వధువు మరణానికి కారణం.",
+    "meaning3": "అర్థం: అన్ని uttamamaina గుణాలు ఉన్నా, నాడి దోషం ఉంటే వివాహం చేయకూడదు; nidhanam, vinasham.",
+    "academic_title": "ఆధునిక academic validation",
+    "academic_content": "కాశీ విద్వత్ పరిషత్ scholars Professor Ramchandra Pandey, Professor Umashankar Shukla మొ. declared నాడి దోషం deadly defect when same Nadi. worship, mantras, yajnas, donations తో remedy లేదు; abandon relationship only solution.",
+    "trouble_title": "Location Lookup Troubleshooting",
+    "trouble_content": '"Location Error" వస్తే ఈ formats try చేయండి:',
+    "trouble_examples": "India: Mumbai, Maharashtra, India | USA: New York, NY, USA | UK: London, England, UK | Australia: Sydney, NSW, Australia | General: city, region/state, country include",
+    "trouble_tip": "💡 Tip: town not found అయితే major cities use. astrological calculations కి difference minimal.",
+    "pwa": {
+        "installTitle": "యాప్ ఇన్‌స్టాల్", "installDesc": "త్వరిత access కోసం Home Screen కు add",
+        "installButton": "ఇన్‌స్టాల్", "iosInstructions": "Install: Share button tap → Add to Home Screen",
+        "androidInstructions": "Install: Menu tap → Add to Home Screen",
+        "desktopInstructions": "Install: browser address bar lo install icon click",
+    },
+}
+'''

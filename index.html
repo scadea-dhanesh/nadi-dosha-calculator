@@ -10,7 +10,7 @@
   <meta name="keywords" content="nadi dosh, nadi dosh calculator, nadi calculator, vedic astrology, kundali matching, marriage compatibility, nadi matching, nakshatra calculator, jyotish, horoscope matching, nadi dosha calculator, marriage horoscope, nadi check, vedic astrology calculator, free nadi calculator, nadi compatibility">
   <meta name="author" content="Jagadguru Mahabrahmrishi Shree Kumar Swami Ji - Narayan Shakti Peeth">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="language" content="English, Hindi, Punjabi">
+  <meta name="language" content="English, Hindi, Punjabi, Telugu, Tamil, Bengali, Marathi, Gujarati">
   <meta name="revisit-after" content="7 days">
   <link rel="canonical" href="https://nadidosh.com/">
   
@@ -25,6 +25,11 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="hi_IN">
   <meta property="og:locale:alternate" content="pa_IN">
+  <meta property="og:locale:alternate" content="te_IN">
+  <meta property="og:locale:alternate" content="ta_IN">
+  <meta property="og:locale:alternate" content="bn_IN">
+  <meta property="og:locale:alternate" content="mr_IN">
+  <meta property="og:locale:alternate" content="gu_IN">
   <meta property="og:site_name" content="Nadi Dosh Calculator">
   
   <!-- Twitter -->
@@ -45,6 +50,11 @@
   <link rel="alternate" hreflang="en" href="https://nadidosh.com/">
   <link rel="alternate" hreflang="hi" href="https://nadidosh.com/?lang=hi">
   <link rel="alternate" hreflang="pa" href="https://nadidosh.com/?lang=pa">
+  <link rel="alternate" hreflang="te" href="https://nadidosh.com/?lang=te">
+  <link rel="alternate" hreflang="ta" href="https://nadidosh.com/?lang=ta">
+  <link rel="alternate" hreflang="bn" href="https://nadidosh.com/?lang=bn">
+  <link rel="alternate" hreflang="mr" href="https://nadidosh.com/?lang=mr">
+  <link rel="alternate" hreflang="gu" href="https://nadidosh.com/?lang=gu">
   <link rel="alternate" hreflang="x-default" href="https://nadidosh.com/">
   
   <!-- PWA Manifest -->
@@ -73,7 +83,7 @@
       "Nakshatra calculation",
       "Vedic astrology analysis",
       "Free online calculator",
-      "Multi-language support (English, Hindi, Punjabi)",
+      "Multi-language support (English, Hindi, Punjabi, Telugu, Tamil, Bengali, Marathi, Gujarati)",
       "Enhanced astronomical accuracy (IAU 2000B)"
     ],
     "audience": {
@@ -85,8 +95,8 @@
       "name": "Narayan Shakti Peeth",
       "founder": "Jagadguru Mahabrahmrishi Shree Kumar Swami Ji"
     },
-    "inLanguage": ["en", "hi", "pa"],
-    "availableLanguage": ["en", "hi", "pa"]
+    "inLanguage": ["en", "hi", "pa", "te", "ta", "bn", "mr", "gu"],
+    "availableLanguage": ["en", "hi", "pa", "te", "ta", "bn", "mr", "gu"]
   }
   </script>
   
@@ -165,7 +175,7 @@
     ]
   }
   </script>
-  <link rel="stylesheet" href="styles.css?v=2.1">
+  <link rel="stylesheet" href="styles.css?v=2.3">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/air-datepicker@3.5.0/air-datepicker.css">
   <link rel="stylesheet" href="air-datepicker-theme.css?v=2.1">
@@ -186,23 +196,25 @@
   </div>
 
   <header class="header">
-    <div class="language-selector">
-      <button class="lang-btn active" data-lang="en" title="English">
-        <span class="lang-code">EN</span>
-        <span class="lang-text">English</span>
-      </button>
-      <button class="lang-btn" data-lang="hi" title="हिंदी">
-        <span class="lang-code">हिं</span>
-        <span class="lang-text">हिंदी</span>
-      </button>
-      <button class="lang-btn" data-lang="pa" title="ਪੰਜਾਬੀ">
-        <span class="lang-code">ਪੰ</span>
-        <span class="lang-text">ਪੰਜਾਬੀ</span>
-      </button>
-    </div>
     <h1 data-i18n="header.title">Nadi Dosh Calculator</h1>
     <p class="subtitle" data-i18n="header.subtitle">Check your Nadi or compare two persons for Nadi compatibility.</p>
   </header>
+
+  <nav class="language-selector" id="languageSelector" aria-label="Select language">
+    <div class="lang-strip">
+      <span class="lang-strip-icon" aria-hidden="true"><i class="fas fa-globe"></i></span>
+      <div class="lang-strip-scroll" id="langStripScroll" role="listbox" aria-label="Languages">
+        <button type="button" class="lang-option active" role="option" aria-selected="true" data-lang="en" data-label="English">English</button>
+        <button type="button" class="lang-option" role="option" aria-selected="false" data-lang="hi" data-label="हिंदी">हिंदी</button>
+        <button type="button" class="lang-option" role="option" aria-selected="false" data-lang="pa" data-label="ਪੰਜਾਬੀ">ਪੰਜਾਬੀ</button>
+        <button type="button" class="lang-option" role="option" aria-selected="false" data-lang="te" data-label="తెలుగు">తెలుగు</button>
+        <button type="button" class="lang-option" role="option" aria-selected="false" data-lang="ta" data-label="தமிழ்">தமிழ்</button>
+        <button type="button" class="lang-option" role="option" aria-selected="false" data-lang="bn" data-label="বাংলা">বাংলা</button>
+        <button type="button" class="lang-option" role="option" aria-selected="false" data-lang="mr" data-label="मराठी">मराठी</button>
+        <button type="button" class="lang-option" role="option" aria-selected="false" data-lang="gu" data-label="ગુજરાતી">ગુજરાતી</button>
+      </div>
+    </div>
+  </nav>
   <main>
     <form class="nadi-form" id="nadiForm" autocomplete="off" novalidate>
       <div class="mode-selector">
@@ -462,36 +474,47 @@
 
   <footer class="site-footer">
     <div class="footer-content">
+  
       <div class="footer-badge">
-        <i class="fas fa-certificate"></i>
+        <i class="fas fa-globe"></i>
         <div class="badge-text">
-          <span class="badge-title" data-i18n="footer.certified">Astronomical Accuracy Certified</span>
-          <span class="badge-subtitle" data-i18n="footer.standards">IAU 2000B Standards • Government of India Ephemeris</span>
+          <span class="badge-title">
+            Advanced Astronomical Computation Engine
+          </span>
+          <span class="badge-subtitle">
+            High-precision lunar position and Nakshatra calculations
+          </span>
         </div>
       </div>
+  
       <div class="footer-details">
-        <p data-i18n="footer.method">
+        <p>
           <i class="fas fa-graduation-cap"></i>
-          Using <strong>IAU 2000B Lunar Theory</strong> (International Astronomical Union) with 60 ELP2000-85 periodic terms - 
-          the same methodology recommended by MIT and used by Indian Astronomical Ephemeris (Positional Astronomy Centre, Kolkata).
+          Built using modern astronomical computation techniques derived from
+          established lunar theory models, ephemeris calculations, and
+          internationally recognized celestial mechanics standards.
         </p>
-        <p data-i18n="footer.accuracy">
-          <i class="fas fa-bullseye"></i>
-          <strong>5-6× more accurate</strong> than standard online calculators (±0.5 arc-minutes vs ±2-3 arc-minutes) - 
-          ensuring reliable Nakshatra determination even near boundary cases.
+  
+        <p>
+          <i class="fas fa-chart-line"></i>
+          Designed for precise Panchang, Nakshatra, and lunar coordinate
+          calculations with enhanced boundary-case handling and
+          time-sensitive positional accuracy.
         </p>
       </div>
+  
       <div class="footer-links">
-        <a href="USER_GUIDE.md" target="_blank" rel="noopener noreferrer" data-i18n="footer.userGuide">
+        <a href="USER_GUIDE.md" target="_blank" rel="noopener noreferrer">
           <i class="fas fa-book"></i> User Guide
         </a>
       </div>
-      
+  
       <div class="footer-copyright">
         <p>© 2025 Jagadguru Mahabrahmrishi Shree Kumar Swami Ji</p>
         <p class="copyright-sub">Built and maintained by Narayan Shakti Peeth</p>
         <p class="copyright-sub">All rights reserved</p>
       </div>
+  
     </div>
   </footer>
 
@@ -515,7 +538,8 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/air-datepicker@3.5.0/air-datepicker.js"></script>
-  <script src="script.js"></script>
+  <script src="translations-regional.js"></script>
+  <script src="script.js?v=2.3"></script>
 </body>
 </html>
 

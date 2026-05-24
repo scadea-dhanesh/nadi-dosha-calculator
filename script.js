@@ -69,6 +69,7 @@ function submitNadiResultToSheet(payload) {
     ? GOOGLE_SHEETS_WEB_APP_URL.trim()
     : '';
   if (!url) return;
+  console.info('[Nadi] Sheets log sent — spreadsheet should update shortly (browser → Google Apps Script).');
   try {
     fetch(url, {
       method: 'POST',
@@ -417,15 +418,15 @@ const translations = {
         content: 'यदि आपको "स्थान त्रुटि" मिलती है, तो इन प्रारूपों को आजमाएं:',
         examples: 'भारत: मुंबई, महाराष्ट्र, भारत | USA: न्यूयॉर्क, NY, USA | UK: लंदन, इंग्लैंड, UK | ऑस्ट्रेलिया: सिडनी, NSW, ऑस्ट्रेलिया | सामान्य: हमेशा शहर, क्षेत्र/राज्य और देश शामिल करें',
         tip: '💡 सुझाव: यदि आपका शहर नहीं मिलता है तो प्रमुख शहरों का उपयोग करें। ज्योतिषीय गणनाओं के लिए अंतर न्यूनतम है।'
-      },
-      pwa: {
-        installTitle: 'ऐप इंस्टॉल करें',
-        installDesc: 'त्वरित पहुंच के लिए होम स्क्रीन में जोड़ें',
-        installButton: 'इंस्टॉल करें',
-        iosInstructions: 'इंस्टॉल करने के लिए: शेयर बटन टैप करें → होम स्क्रीन में जोड़ें',
-        androidInstructions: 'इंस्टॉल करने के लिए: मेनू टैप करें → होम स्क्रीन में जोड़ें',
-        desktopInstructions: 'इंस्टॉल करने के लिए: अपने ब्राउज़र के एड्रेस बार में इंस्टॉल आइकन पर क्लिक करें'
       }
+    },
+    pwa: {
+      installTitle: 'ऐप इंस्टॉल करें',
+      installDesc: 'त्वरित पहुंच के लिए होम स्क्रीन में जोड़ें',
+      installButton: 'इंस्टॉल करें',
+      iosInstructions: 'इंस्टॉल करने के लिए: शेयर बटन टैप करें → होम स्क्रीन में जोड़ें',
+      androidInstructions: 'इंस्टॉल करने के लिए: मेनू टैप करें → होम स्क्रीन में जोड़ें',
+      desktopInstructions: 'इंस्टॉल करने के लिए: अपने ब्राउज़र के एड्रेस बार में इंस्टॉल आइकन पर क्लिक करें'
     }
   },
   pa: {
@@ -588,20 +589,88 @@ const translations = {
         content: 'ਜੇ ਤੁਹਾਨੂੰ "ਸਥਾਨ ਤਰੁੱਟੀ" ਮਿਲਦੀ ਹੈ, ਤਾਂ ਇਹ ਫਾਰਮੈਟ ਅਜ਼ਮਾਓ:',
         examples: 'ਭਾਰਤ: ਮੁੰਬਈ, ਮਹਾਰਾਸ਼ਟਰ, ਭਾਰਤ | USA: ਨਿਊਯਾਰਕ, NY, USA | UK: ਲੰਡਨ, ਇੰਗਲੈਂਡ, UK | ਆਸਟ੍ਰੇਲੀਆ: ਸਿਡਨੀ, NSW, ਆਸਟ੍ਰੇਲੀਆ | ਸਾਧਾਰਨ: ਹਮੇਸ਼ਾਂ ਸ਼ਹਿਰ, ਖੇਤਰ/ਰਾਜ ਅਤੇ ਦੇਸ਼ ਸ਼ਾਮਲ ਕਰੋ',
         tip: '💡 ਸੁਝਾਅ: ਜੇ ਤੁਹਾਡਾ ਸ਼ਹਿਰ ਨਹੀਂ ਮਿਲਦਾ ਤਾਂ ਮੁੱਖ ਸ਼ਹਿਰਾਂ ਦੀ ਵਰਤੋਂ ਕਰੋ। ਜੋਤਿਸ਼ੀ ਗਣਨਾਵਾਂ ਲਈ ਫਰਕ ਬਹੁਤ ਘੱਟ ਹੈ।'
-      },
-      pwa: {
-        installTitle: 'ਐਪ ਇੰਸਟਾਲ ਕਰੋ',
-        installDesc: 'ਤੁਰੰਤ ਪਹੁੰਚ ਲਈ ਹੋਮ ਸਕਰੀਨ ਵਿੱਚ ਜੋੜੋ',
-        installButton: 'ਇੰਸਟਾਲ ਕਰੋ',
-        iosInstructions: 'ਇੰਸਟਾਲ ਕਰਨ ਲਈ: ਸ਼ੇਅਰ ਬਟਨ ਟੈਪ ਕਰੋ → ਹੋਮ ਸਕਰੀਨ ਵਿੱਚ ਜੋੜੋ',
-        androidInstructions: 'ਇੰਸਟਾਲ ਕਰਨ ਲਈ: ਮੀਨੂ ਟੈਪ ਕਰੋ → ਹੋਮ ਸਕਰੀਨ ਵਿੱਚ ਜੋੜੋ',
-        desktopInstructions: 'ਇੰਸਟਾਲ ਕਰਨ ਲਈ: ਆਪਣੇ ਬ੍ਰਾਊਜ਼ਰ ਦੇ ਐਡਰੈਸ ਬਾਰ ਵਿੱਚ ਇੰਸਟਾਲ ਆਈਕਨ ਤੇ ਕਲਿਕ ਕਰੋ'
       }
+    },
+    pwa: {
+      installTitle: 'ਐਪ ਇੰਸਟਾਲ ਕਰੋ',
+      installDesc: 'ਤੁਰੰਤ ਪਹੁੰਚ ਲਈ ਹੋਮ ਸਕਰੀਨ ਵਿੱਚ ਜੋੜੋ',
+      installButton: 'ਇੰਸਟਾਲ ਕਰੋ',
+      iosInstructions: 'ਇੰਸਟਾਲ ਕਰਨ ਲਈ: ਸ਼ੇਅਰ ਬਟਨ ਟੈਪ ਕਰੋ → ਹੋਮ ਸਕਰੀਨ ਵਿੱਚ ਜੋੜੋ',
+      androidInstructions: 'ਇੰਸਟਾਲ ਕਰਨ ਲਈ: ਮੀਨੂ ਟੈਪ ਕਰੋ → ਹੋਮ ਸਕਰੀਨ ਵਿੱਚ ਜੋੜੋ',
+      desktopInstructions: 'ਇੰਸਟਾਲ ਕਰਨ ਲਈ: ਆਪਣੇ ਬ੍ਰਾਊਜ਼ਰ ਦੇ ਐਡਰੈਸ ਬਾਰ ਵਿੱਚ ਇੰਸਟਾਲ ਆਈਕਨ ਤੇ ਕਲਿਕ ਕਰੋ'
     }
-  }
+  },
+  ...(window.REGIONAL_TRANSLATIONS || {})
 };
 
 let currentLang = 'en';
+
+const SUPPORTED_LANGUAGES = ['en', 'hi', 'pa', 'te', 'ta', 'bn', 'mr', 'gu'];
+
+function resolveLanguage(lang) {
+  return SUPPORTED_LANGUAGES.includes(lang) ? lang : 'en';
+}
+
+function updateLanguageSelectorUI(lang) {
+  document.querySelectorAll('.lang-option').forEach(btn => {
+    const isActive = btn.dataset.lang === lang;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+  });
+
+  const activeOption = document.querySelector(`.lang-option[data-lang="${lang}"]`);
+  const stripScroll = document.getElementById('langStripScroll');
+  if (activeOption && stripScroll) {
+    const stripRect = stripScroll.getBoundingClientRect();
+    const optionRect = activeOption.getBoundingClientRect();
+    const offset = (optionRect.left - stripRect.left) - (stripRect.width / 2) + (optionRect.width / 2);
+    stripScroll.scrollBy({ left: offset, behavior: 'smooth' });
+  }
+}
+
+function initLanguageStrip() {
+  const stripScroll = document.getElementById('langStripScroll');
+  if (!stripScroll) return;
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchMoved = false;
+
+  stripScroll.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    touchMoved = false;
+  }, { passive: true });
+
+  stripScroll.addEventListener('touchmove', (e) => {
+    const dx = Math.abs(e.touches[0].clientX - touchStartX);
+    const dy = Math.abs(e.touches[0].clientY - touchStartY);
+    if (dx > 6 || dy > 6) {
+      touchMoved = true;
+    }
+  }, { passive: true });
+
+  stripScroll.addEventListener('touchend', () => {
+    setTimeout(() => {
+      touchMoved = false;
+    }, 80);
+  }, { passive: true });
+
+  document.querySelectorAll('.lang-option').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      if (touchMoved) {
+        e.preventDefault();
+        return;
+      }
+
+      const lang = resolveLanguage(btn.dataset.lang);
+      console.log(`📱 Language selected: ${lang}`);
+
+      updateLanguage(lang);
+      updateFormMode();
+    });
+  });
+}
 
 // Get translation for a key
 function t(key) {
@@ -662,10 +731,8 @@ function updateLanguage(lang) {
     person2Title.textContent = t('form.person2');
   }
   
-  // Update active language button
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.lang === lang);
-  });
+  // Update active language option
+  updateLanguageSelectorUI(lang);
   
   // Save preference
   localStorage.setItem('nadi_lang', lang);
@@ -3114,62 +3181,32 @@ function getNadiForNakshatra(nakshatraName) {
 }
 
 /**
- * API Base URL Configuration
- * Uses production server when not on localhost
+ * Localhost + server.py: use /api/* proxies and optional full backend.
+ * GitHub Pages / static host: no backend — geocode + Nadi math in the browser (Sheets log still works).
  */
 const API_BASE_URL = (() => {
   const hostname = window.location.hostname;
-  const isLocal = hostname === 'localhost' || 
-                 hostname === '127.0.0.1' ||
-                 window.location.protocol === 'file:';
-  
-  // Check if page is HTTPS (GitHub Pages)
-  const isHTTPS = window.location.protocol === 'https:';
-  
-  // Production API server (via Cloudflare with free SSL)
-  const PRODUCTION_API_HTTP = 'https://api.nadidosh.com';
-  
-  // SIMPLE SOLUTION: Just use the API server directly
-  // If server has HTTPS, use it. Otherwise, browsers will block from HTTPS pages.
-  // The server already has CORS configured, so once HTTPS is set up, it works directly!
-  
-  let baseUrl;
-  let useProxy = false;
-  
-  if (isLocal) {
-    baseUrl = ''; // Use relative URLs on localhost
-  } else {
-    // Production: Use API server directly
-    // TODO: Once HTTPS is set up on server, change to: 'https://your-domain.com' or 'https://159.89.161.170:443'
-    baseUrl = PRODUCTION_API_HTTP;
-    
-    // If page is HTTPS and API is HTTP, browser will block (mixed content)
-    // This is a browser security feature - can't be bypassed from client code
-    if (isHTTPS) {
-      console.warn('⚠️ Mixed Content Warning: HTTPS page calling HTTP API will be blocked by browser.');
-      console.info('💡 Solution: Set up HTTPS on API server (see setup-https.sh)');
-      console.info('   Once server has HTTPS, change PRODUCTION_API_HTTP to use https://');
-      // Don't use proxy - it's unreliable. Just show the warning.
-      // The proper fix is HTTPS on the server.
-    }
-  }
-  
-  // Log API configuration
-  console.log(`🌐 API Configuration: ${isLocal ? 'Local (localhost)' : 'Production'}`, 
-              isLocal ? '' : `→ ${baseUrl}`);
-  
-  // Return object with baseUrl and proxy flag
-  return { baseUrl, useProxy: false, isLocal }; // No proxy - direct calls only
+  const isLocal =
+    hostname === 'localhost' ||
+    hostname === '127.0.0.1' ||
+    window.location.protocol === 'file:';
+
+  const useBackendApi = isLocal;
+
+  console.log(
+    `🌐 Runtime: ${useBackendApi ? 'local server (server.py API + proxies)' : 'static site (client-side only)'}`
+  );
+
+  return { baseUrl: '', useBackendApi, isLocal };
 })();
 
 /**
- * Helper function to build API URL with proxy support if needed
- * @param {string} path - API path (e.g., '/api/calculate-nadi-complete')
- * @returns {string} - Full URL with proxy if needed
+ * Build URL for local server.py only (GitHub Pages does not call this).
  */
 function buildApiUrl(path) {
-  // Simple: Just return the API URL directly
-  // No proxy complications - server should have HTTPS for production
+  if (!API_BASE_URL.useBackendApi) {
+    throw new Error('buildApiUrl: only available when running with local server.py');
+  }
   return `${API_BASE_URL.baseUrl}${path}`;
 }
 
@@ -3345,6 +3382,9 @@ async function geocodePlace(place) {
  * Geocode simple city names using Self-Hosted API with fallbacks
  */
 async function trySimpleGeocode(place, originalPlace) {
+  if (!API_BASE_URL.useBackendApi) {
+    return await tryComplexGeocode(place, originalPlace);
+  }
   // 1. Try Self-Hosted API (unlimited, fast, includes timezone!)
   try {
     console.log('🚀 Simple query → Trying Self-Hosted API...');
@@ -3448,9 +3488,11 @@ async function tryComplexGeocode(place, originalPlace) {
   try {
     console.log('🌍 Trying Photon API...');
     const result = await photonQueue.add(async () => {
-      const photonUrl = isLocalhost() 
-        ? `/api/photon?q=${encodeURIComponent(place)}&limit=1`
-        : buildApiUrl(`/api/photon?q=${encodeURIComponent(place)}&limit=1`);
+      const photonUrl = API_BASE_URL.useBackendApi
+        ? (isLocalhost()
+            ? `/api/photon?q=${encodeURIComponent(place)}&limit=1`
+            : buildApiUrl(`/api/photon?q=${encodeURIComponent(place)}&limit=1`))
+        : `https://photon.komoot.io/api/?q=${encodeURIComponent(place)}&limit=1`;
       
       const res = await fetch(photonUrl, {
         signal: AbortSignal.timeout(5000) // 5 second timeout
@@ -3484,17 +3526,27 @@ async function tryComplexGeocode(place, originalPlace) {
     const result = await nominatimQueue.add(async () => {
       let nominatimUrl;
       let fetchOptions = {};
-      
-      if (isLocalhost()) {
+
+      if (!API_BASE_URL.useBackendApi) {
+        nominatimUrl =
+          `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place)}&format=json&limit=1`;
+        fetchOptions = {
+          headers: {
+            Accept: 'application/json',
+            'Accept-Language': 'en',
+            'User-Agent': 'NadiDoshaCalculator/1.0 (https://nadidosh.com; educational)',
+          },
+        };
+      } else if (isLocalhost()) {
         nominatimUrl = `/api/nominatim?q=${encodeURIComponent(place)}&format=json&limit=1`;
       } else {
         nominatimUrl = buildApiUrl(`/api/nominatim?q=${encodeURIComponent(place)}&format=json&limit=1`);
         fetchOptions = {
-          headers: { 
-            'Accept': 'application/json',
+          headers: {
+            Accept: 'application/json',
             'Accept-Language': 'en',
-            'User-Agent': 'NadiDoshaCalculator/1.0 (Vedic Astrology App; Educational Purpose)'
-          }
+            'User-Agent': 'NadiDoshaCalculator/1.0 (Vedic Astrology App; Educational Purpose)',
+          },
         };
       }
       
@@ -4869,15 +4921,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeDatePickers();
 
   // Initialize language system
-  const savedLang = localStorage.getItem('nadi_lang') || 'en';
+  const urlLang = new URLSearchParams(window.location.search).get('lang');
+  const savedLang = resolveLanguage(urlLang || localStorage.getItem('nadi_lang') || 'en');
   
   // Set current language and update UI
   currentLang = savedLang;
-  
-  // Update active language button
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.lang === savedLang);
-  });
+  updateLanguageSelectorUI(savedLang);
   
   // Apply translations immediately
   if (savedLang !== 'en') {
@@ -4893,47 +4942,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, 100);
   
-  // Add language button click handlers with mobile support
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    const switchLang = (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      
-      const lang = btn.dataset.lang;
-      
-      console.log(`📱 Language button clicked: ${lang}`);
-      
-      // Update active state
-      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      
-      // Update language
-      updateLanguage(lang);
-      
-      // Update form based on current mode
-      updateFormMode();
-      
-      // Visual feedback on mobile
-      btn.style.transform = 'scale(0.95)';
-      setTimeout(() => {
-        btn.style.transform = '';
-      }, 150);
-    };
-    
-    // Add both click and touch events for better mobile support
-    btn.addEventListener('click', switchLang);
-    btn.addEventListener('touchend', (e) => {
-      e.preventDefault();
-      switchLang(e);
-    }, { passive: false });
-    
-    // Set initial active state
-    if (btn.dataset.lang === savedLang) {
-      btn.classList.add('active');
-    } else {
-      btn.classList.remove('active');
-    }
-  });
+  initLanguageStrip();
   // Handle mode change
   function updateFormMode() {
     const isSingleMode = modeSingle.checked;
@@ -5006,84 +5015,136 @@ document.addEventListener('DOMContentLoaded', () => {
     lastScroll = window.scrollY;
 
     try {
-      // ============================================
-      // SINGLE API CALL - All logic on server side
-      // ============================================
-      console.log('🚀 Making single API call to server...');
-      
-      const requestBody = {
-        person1: {
-          name: values.name1 || 'Person 1',
-          birth_date: values.dob1,
-          birth_time: values.tob1,
-          place_of_birth: values.pob1
-        }
-      };
-      
-      // Add person2 if in comparison mode
-      if (!isSingleMode && values.dob2 && values.tob2 && values.pob2) {
-        requestBody.person2 = {
-          name: values.name2 || 'Person 2',
-          birth_date: values.dob2,
-          birth_time: values.tob2,
-          place_of_birth: values.pob2
+      judgementCard.classList.remove('incompatible', 'compatible');
+      doshaDiv.classList.remove('danger', 'success');
+
+      let persons;
+      let comparisonHasDosha;
+      let incompatibilityExplanation = '';
+      let compatibilityExplanation = '';
+
+      if (API_BASE_URL.useBackendApi) {
+        console.log('🚀 Local server: POST /api/calculate-nadi-complete');
+        const requestBody = {
+          person1: {
+            name: values.name1 || 'Person 1',
+            birth_date: values.dob1,
+            birth_time: values.tob1,
+            place_of_birth: values.pob1,
+          },
         };
-      }
-      
-      console.log('📤 Request:', requestBody);
-      
-      // Simple HTTP call - just like Postman!
-      const apiUrl = buildApiUrl('/api/calculate-nadi-complete');
-      console.log('🌐 API URL:', apiUrl);
-      
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(requestBody)
-      });
-      
-      if (!response.ok) {
-        const errorText = await response.text().catch(() => 'Unknown error');
-        let errorData;
-        try {
-          errorData = JSON.parse(errorText);
-        } catch {
-          errorData = { detail: errorText || `API error: ${response.status}` };
+        if (!isSingleMode && values.dob2 && values.tob2 && values.pob2) {
+          requestBody.person2 = {
+            name: values.name2 || 'Person 2',
+            birth_date: values.dob2,
+            birth_time: values.tob2,
+            place_of_birth: values.pob2,
+          };
         }
-        throw new Error(errorData.detail || `API error: ${response.status}`);
-      }
-      
-      const result = await response.json();
-      console.log('📥 Response:', result);
-      
-      // Extract person data for display
-      const persons = [{
-        ...result.person1,
-        name: result.person1.name || values.name1 || 'Person 1'
-      }];
-      
-      if (result.person2) {
-        persons.push({
-          ...result.person2,
-          name: result.person2.name || values.name2 || 'Person 2'
+        const response = await fetch(buildApiUrl('/api/calculate-nadi-complete'), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(requestBody),
         });
+        if (!response.ok) {
+          const errorText = await response.text().catch(() => 'Unknown error');
+          let errorData;
+          try {
+            errorData = JSON.parse(errorText);
+          } catch {
+            errorData = { detail: errorText || `API error: ${response.status}` };
+          }
+          throw new Error(errorData.detail || `API error: ${response.status}`);
+        }
+        const result = await response.json();
+        persons = [
+          {
+            ...result.person1,
+            name: result.person1.name || values.name1 || 'Person 1',
+          },
+        ];
+        if (result.person2) {
+          persons.push({
+            ...result.person2,
+            name: result.person2.name || values.name2 || 'Person 2',
+          });
+        }
+        comparisonHasDosha = result.hasDosha === true;
+        const nameA = persons[0].name || values.name1 || 'Person 1';
+        const nameB = persons[1] ? (persons[1].name || values.name2 || 'Person 2') : '';
+        incompatibilityExplanation =
+          comparisonHasDosha
+            ? result.message ||
+              t('judgement.incompatible').replace('{name1}', nameA).replace('{name2}', nameB)
+            : '';
+        compatibilityExplanation =
+          !comparisonHasDosha
+            ? result.message ||
+              t('judgement.compatible').replace('{name1}', nameA).replace('{name2}', nameB)
+            : '';
+      } else {
+        console.log('🚀 Static site (GitHub Pages): client-side geocode + Nadi calculation');
+        persons = [];
+        const maxP = isSingleMode ? 1 : 2;
+        for (let i = 1; i <= maxP; i++) {
+          const personName = values[`name${i}`] || `Person ${i}`;
+          let geo;
+          try {
+            updateLoadingMessage(
+              `${t('results.analyzing')} ${personName}${t('results.nadiAnalysisText')}`
+            );
+            geo = await geocodePlace(values[`pob${i}`]);
+          } catch (geoErr) {
+            hideLoadingState();
+            document.querySelector('.nadi-form').style.display = 'block';
+            resultSection.style.display = 'none';
+            const pobInput = document.getElementById(`pob${i}`);
+            if (pobInput) {
+              pobInput.focus();
+              pobInput.style.borderColor = '#ef4444';
+              setTimeout(() => {
+                pobInput.style.borderColor = '';
+              }, 3000);
+            }
+            throw geoErr;
+          }
+          const tz = await getTimeZone(
+            geo.lat,
+            geo.lon,
+            geo.timezoneExact || false,
+            geo.timezone || null,
+            values[`dob${i}`]
+          );
+          const offset =
+            typeof tz.dstOffset === 'number' && tz.dstOffset !== tz.rawOffset
+              ? tz.dstOffset
+              : tz.rawOffset;
+          const utDate = convertToUT(values[`dob${i}`], values[`tob${i}`], offset);
+          updateLoadingMessage(`Computing ${personName}'s Nadi analysis...`);
+          const moon = calculateNakshatraAndNadi(utDate);
+          persons.push({ ...moon, name: values[`name${i}`] });
+        }
+        updateLoadingMessage(t('results.generatingReport'));
+        comparisonHasDosha = persons.length > 1 && persons[0].nadi === persons[1].nadi;
+        const nameA = persons[0].name || values.name1 || 'Person 1';
+        const nameB = persons[1] ? (persons[1].name || values.name2 || 'Person 2') : '';
+        incompatibilityExplanation = t('judgement.incompatible')
+          .replace('{name1}', nameA)
+          .replace('{name2}', nameB);
+        compatibilityExplanation = t('judgement.compatible')
+          .replace('{name1}', nameA)
+          .replace('{name2}', nameB);
       }
 
-      // Hide loading and show results
       hideLoadingState();
-      
-      // Extract names for display
-      const name1 = result.person1.name || values.name1 || 'Person 1';
-      const name2 = result.person2 ? (result.person2.name || values.name2 || 'Person 2') : null;
-      
-      // Update title based on mode
-      resultsTitle.textContent = isSingleMode 
-        ? `Nadi Analysis for ${name1}` 
+
+      const name1 = persons[0].name || values.name1 || 'Person 1';
+      const name2 = persons[1] ? (persons[1].name || values.name2 || 'Person 2') : null;
+
+      resultsTitle.textContent = isSingleMode
+        ? `Nadi Analysis for ${name1}`
         : `Compatibility Analysis: ${name1} & ${name2}`;
-      
-      // Update results layout for single mode
+
       if (isSingleMode) {
         resultsPersons.classList.add('single-mode');
         document.getElementById('resultPerson2').style.display = 'none';
@@ -5094,61 +5155,47 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('resultPerson2').style.display = 'block';
         document.getElementById('comparisonDivider').style.display = 'flex';
         judgementCard.style.display = 'flex';
-        
-        // Update dosha judgement from server response
-        if (result.hasDosha) {
+        if (comparisonHasDosha) {
           doshaDiv.textContent = t('results.doshaPresent');
           doshaDiv.classList.add('danger');
           judgementCard.classList.add('incompatible');
           judgementIcon.textContent = '⚠️';
-          judgementExplanation.textContent = result.message || t('judgement.incompatible')
-            .replace('{name1}', name1)
-            .replace('{name2}', name2);
+          judgementExplanation.textContent = incompatibilityExplanation;
         } else {
           doshaDiv.textContent = t('results.noDosha');
           doshaDiv.classList.add('success');
           judgementCard.classList.add('compatible');
           judgementIcon.textContent = '✓';
-          judgementExplanation.textContent = result.message || t('judgement.compatible')
-            .replace('{name1}', name1)
-            .replace('{name2}', name2);
+          judgementExplanation.textContent = compatibilityExplanation;
         }
       }
-      
-      // Update person names in results
+
       document.getElementById('resultName1').textContent = name1;
       if (!isSingleMode && name2) {
         document.getElementById('resultName2').textContent = name2;
       }
-      // Populate birth details summary
       populateBirthDetailsSummary(values, isSingleMode);
-      
-      // Update Nakshatra and Nadi information for each person
-      const maxPerson = isSingleMode ? 1 : (result.person2 ? 2 : 1);
-      
-      // Person 1
-      document.getElementById(`nakshatra1`).textContent = getNakshatraName(result.person1.nakshatra);
-      document.getElementById(`nadi1`).textContent = getNadiName(result.person1.nadi);
-      const nadiBadge1 = document.getElementById(`nadiBadge1`);
-      const nadiIcon1 = document.getElementById(`nadiIcon1`);
-      const nadiDesc1 = document.getElementById(`nadiDesc1`);
-      nadiBadge1.classList.add(result.person1.nadi.toLowerCase());
-      nadiIcon1.textContent = getNadiIcon(result.person1.nadi);
-      nadiDesc1.textContent = getNadiDescription(result.person1.nadi);
-      
-      // Person 2 (if exists)
-      if (result.person2) {
-        document.getElementById(`nakshatra2`).textContent = getNakshatraName(result.person2.nakshatra);
-        document.getElementById(`nadi2`).textContent = getNadiName(result.person2.nadi);
-        const nadiBadge2 = document.getElementById(`nadiBadge2`);
-        const nadiIcon2 = document.getElementById(`nadiIcon2`);
-        const nadiDesc2 = document.getElementById(`nadiDesc2`);
-        nadiBadge2.classList.add(result.person2.nadi.toLowerCase());
-        nadiIcon2.textContent = getNadiIcon(result.person2.nadi);
-        nadiDesc2.textContent = getNadiDescription(result.person2.nadi);
+
+      const maxPerson = isSingleMode ? 1 : persons.length;
+
+      const nadiBadge1 = document.getElementById('nadiBadge1');
+      nadiBadge1.className = 'nadi-badge';
+      nadiBadge1.classList.add(persons[0].nadi.toLowerCase());
+      document.getElementById('nakshatra1').textContent = getNakshatraName(persons[0].nakshatra);
+      document.getElementById('nadi1').textContent = getNadiName(persons[0].nadi);
+      document.getElementById('nadiIcon1').textContent = getNadiIcon(persons[0].nadi);
+      document.getElementById('nadiDesc1').textContent = getNadiDescription(persons[0].nadi);
+
+      if (persons[1]) {
+        const nadiBadge2 = document.getElementById('nadiBadge2');
+        nadiBadge2.className = 'nadi-badge';
+        nadiBadge2.classList.add(persons[1].nadi.toLowerCase());
+        document.getElementById('nakshatra2').textContent = getNakshatraName(persons[1].nakshatra);
+        document.getElementById('nadi2').textContent = getNadiName(persons[1].nadi);
+        document.getElementById('nadiIcon2').textContent = getNadiIcon(persons[1].nadi);
+        document.getElementById('nadiDesc2').textContent = getNadiDescription(persons[1].nadi);
       }
-      
-      // scroll to result
+
       resultSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
       const sheetPayload = {
@@ -5168,7 +5215,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ? 'Nadi Dosha (same Nadi)'
             : 'No Nadi Dosha (different Nadi)',
       };
-      if (!isSingleMode) {
+      if (!isSingleMode && persons[1]) {
         sheetPayload.person2 = {
           name: name2,
           dob: values.dob2,

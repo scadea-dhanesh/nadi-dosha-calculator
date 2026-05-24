@@ -3,8 +3,8 @@
  * Provides offline functionality and caching
  */
 
-const CACHE_NAME = 'nadi-dosh-calculator-v2.1';
-const STATIC_CACHE_NAME = 'nadi-dosh-static-v2.1';
+const CACHE_NAME = 'nadi-dosh-calculator-v2.3';
+const STATIC_CACHE_NAME = 'nadi-dosh-static-v2.3';
 const API_CACHE_NAME = 'nadi-dosh-api-v1.0';
 
 // Files to cache immediately on install
@@ -13,6 +13,7 @@ const STATIC_ASSETS = [
   '/index.html',
   '/styles.css',
   '/script.js',
+  '/translations-regional.js',
   '/air-datepicker-theme.css',
   '/manifest.json',
   '/og-image.png',
